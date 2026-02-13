@@ -1,9 +1,5 @@
 import sys
 from pathlib import Path
-# Add parent directory to path
-parent_folder = str(Path(__file__).parent.parent.parent)
-sys.path.append(parent_folder)
-
 import os
 import json
 from hashlib import sha256
@@ -19,10 +15,14 @@ from pydantic import BaseModel
 from cryptography.fernet import Fernet
 import jwt
 import numpy as np
-
 from src.pipeline_steps.prediction import PredictionPipeline
 
+# Add parent directory to path
+parent_folder = str(Path(__file__).parent.parent.parent)
+sys.path.append(parent_folder)
+
 app = FastAPI()
+
 
 # Constants
 JSON_FILE_PATH = os.path.expanduser("./users/users.json")
