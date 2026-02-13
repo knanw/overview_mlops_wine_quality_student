@@ -23,6 +23,11 @@ sys.path.append(parent_folder)
 
 app = FastAPI()
 
+# Serve static files from ./static
+from fastapi.staticfiles import StaticFiles
+if os.path.isdir("static"):
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # Constants
 JSON_FILE_PATH = os.path.expanduser("./users/users.json")

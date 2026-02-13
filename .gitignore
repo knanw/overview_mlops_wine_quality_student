@@ -5,3 +5,11 @@ devserver.sh
 main.py
 data/
 */__pycache__/*
+/__pycache__/
+src/app/__pycache__/
+logs/logs.log
+src/pipeline_steps/__pycache__/
+src/data_module_def/__pycache__/
+src/models_module_def/__pycache__/
+metrics/
+models/
